@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum CountryFlags: String {
+enum CountryFlags: String, CaseIterable {
     
     case Britain
     case Malaysia
@@ -21,8 +21,9 @@ enum CountryFlags: String {
     case Portugal
     case Russia
     case Croatia
+    case _undefined
  
-    func asEmoji() -> String {
+    func asEmojiString() -> String {
         switch self {
         case .Britain:
             return "🇬🇧"
@@ -48,8 +49,20 @@ enum CountryFlags: String {
             return "🇷🇺"
         case .Croatia:
             return "🇭🇷"
+        case ._undefined:
+            return ""
         }
     }
+    
+    func getCountryFlag(_ forCountry: String) -> CountryFlags {
+        for flag in CountryFlags.allCases {
+            if flag.rawValue.prefix(3) == forCountry.prefix(3) {
+                return flag
+            }
+        }
+        return CountryFlags._undefined
+    }
+    
 }
 
 //= "🇬🇧"

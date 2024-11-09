@@ -24,6 +24,7 @@
 		400067CF2CDEE1F7007037BE /* RecipesApiPaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400067CE2CDEE1F7007037BE /* RecipesApiPaths.swift */; };
 		400067D12CDEE2B6007037BE /* RecipeRequestEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400067D02CDEE2B6007037BE /* RecipeRequestEndpoint.swift */; };
 		400067D52CDF25A1007037BE /* CountryFlags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400067D42CDF25A1007037BE /* CountryFlags.swift */; };
+		400067D82CDF2AE2007037BE /* CountryFlagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400067D72CDF2AE2007037BE /* CountryFlagView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		400067CE2CDEE1F7007037BE /* RecipesApiPaths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesApiPaths.swift; sourceTree = "<group>"; };
 		400067D02CDEE2B6007037BE /* RecipeRequestEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeRequestEndpoint.swift; sourceTree = "<group>"; };
 		400067D42CDF25A1007037BE /* CountryFlags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryFlags.swift; sourceTree = "<group>"; };
+		400067D72CDF2AE2007037BE /* CountryFlagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryFlagView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 		400067912CDEC616007037BE /* FetchRecipes */ = {
 			isa = PBXGroup;
 			children = (
+				400067D62CDF2ACE007037BE /* Views */,
 				400067D32CDF1FEE007037BE /* ViewModels */,
 				400067D22CDF1FC6007037BE /* Models */,
 				400067BC2CDEDAC1007037BE /* Network */,
@@ -203,6 +206,14 @@
 			children = (
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		400067D62CDF2ACE007037BE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				400067D72CDF2AE2007037BE /* CountryFlagView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -335,6 +346,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				400067D82CDF2AE2007037BE /* CountryFlagView.swift in Sources */,
 				400067CD2CDEE1A1007037BE /* RequestScheme.swift in Sources */,
 				400067C32CDEDC84007037BE /* Recipes.swift in Sources */,
 				400067BE2CDEDADF007037BE /* NetworkError.swift in Sources */,
