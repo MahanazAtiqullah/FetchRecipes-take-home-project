@@ -8,5 +8,6 @@
 import Foundation
 
 enum SFSymbols: String {
-    case safari = "safari"
+    case sourceLink = "safari"
+    case imagePlaceholder = "camera.viewfinder"
 }

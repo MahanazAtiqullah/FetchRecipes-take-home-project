@@ -14,5 +14,6 @@ extension RecipeCardView {
             guard let unwrappedString = forString else { return nil }
             return URL(string: unwrappedString)
         }
+        
     }
 }
