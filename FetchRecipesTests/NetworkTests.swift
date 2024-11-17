@@ -15,6 +15,7 @@ final class NetworkTests: XCTestCase {
     
     func testParsingForNonEmptyList() throws {
         networkEngine.request(endpoint: RecipeRequestEndpoint.main) { (result: Result<Recipes, NetworkError>) in
+            XCTFail("failed successfully")
             switch result {
             case .success(let response):
                 XCTAssertNotNil(response)

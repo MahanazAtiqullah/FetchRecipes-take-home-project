@@ -9,59 +9,74 @@ import Foundation
 
 enum CountryFlags: String, CaseIterable {
     
-    case Britain
-    case Malaysia
-    case America
-    case Canada
-    case Italy
-    case Tunisia
-    case France
-    case Greece
-    case Poland
-    case Portugal
-    case Russia
-    case Croatia
+    init(forCountry: String) {
+        for flag in CountryFlags.allCases {
+            print("comparing \(flag.rawValue.prefix(3).lowercased()) with \(forCountry.prefix(3).lowercased())")
+            if flag.rawValue.lowercased() == forCountry.lowercased() {
+                print("true")
+                self = flag
+                print("self = \(self)")
+                return
+            }
+        }
+        print("false")
+        self = CountryFlags._undefined
+        print("self = \(self)")
+    }
+    
+    case British
+    case Malaysian
+    case American
+    case Canadian
+    case Italian
+    case Tunisian
+    case French
+    case Greek
+    case Polish
+    case Portuguese
+    case Russian
+    case Croatian
     case _undefined
  
     func asEmojiString() -> String {
         switch self {
-        case .Britain:
+        case .British:
             return "🇬🇧"
-        case .Malaysia:
+        case .Malaysian:
             return "🇲🇾"
-        case .America:
+        case .American:
             return "🇺🇸"
-        case .Canada:
+        case .Canadian:
             return "🇨🇦"
-        case .Italy:
+        case .Italian:
             return "🇮🇹"
-        case .Tunisia:
+        case .Tunisian:
             return "🇹🇳"
-        case .France:
+        case .French:
             return "🇫🇷"
-        case .Greece:
+        case .Greek:
             return "🇬🇷"
-        case .Poland:
+        case .Polish:
             return "🇵🇱"
-        case .Portugal:
+        case .Portuguese:
             return "🇵🇹"
-        case .Russia:
+        case .Russian:
             return "🇷🇺"
-        case .Croatia:
+        case .Croatian:
             return "🇭🇷"
         case ._undefined:
-            return ""
+            return "NIL"
         }
     }
     
-    func getCountryFlag(_ forCountry: String) -> CountryFlags {
-        for flag in CountryFlags.allCases {
-            if flag.rawValue.prefix(3) == forCountry.prefix(3) {
-                return flag
-            }
-        }
-        return CountryFlags._undefined
-    }
+//    func getCountryFlag(_ forCountry: String) -> CountryFlags {
+//        for flag in CountryFlags.allCases {
+//            if flag.rawValue.prefix(3) == forCountry.prefix(3) {
+//                return flag
+//            }
+//        }
+//        return CountryFlags._undefined
+//    }
     
 }
 

@@ -25,6 +25,10 @@
 		400067D12CDEE2B6007037BE /* RecipeRequestEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400067D02CDEE2B6007037BE /* RecipeRequestEndpoint.swift */; };
 		400067D52CDF25A1007037BE /* CountryFlags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400067D42CDF25A1007037BE /* CountryFlags.swift */; };
 		400067D82CDF2AE2007037BE /* CountryFlagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400067D72CDF2AE2007037BE /* CountryFlagView.swift */; };
+		400067DA2CE1A225007037BE /* RecipeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400067D92CE1A225007037BE /* RecipeCardView.swift */; };
+		400067DC2CE1B4A7007037BE /* RecipesCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400067DB2CE1B4A7007037BE /* RecipesCollectionView.swift */; };
+		400067DE2CE1B4B6007037BE /* RecipesCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400067DD2CE1B4B6007037BE /* RecipesCollectionViewModel.swift */; };
+		400067E02CE2FEE4007037BE /* NetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400067DF2CE2FEE4007037BE /* NetworkTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +70,10 @@
 		400067D02CDEE2B6007037BE /* RecipeRequestEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeRequestEndpoint.swift; sourceTree = "<group>"; };
 		400067D42CDF25A1007037BE /* CountryFlags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryFlags.swift; sourceTree = "<group>"; };
 		400067D72CDF2AE2007037BE /* CountryFlagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryFlagView.swift; sourceTree = "<group>"; };
+		400067D92CE1A225007037BE /* RecipeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCardView.swift; sourceTree = "<group>"; };
+		400067DB2CE1B4A7007037BE /* RecipesCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesCollectionView.swift; sourceTree = "<group>"; };
+		400067DD2CE1B4B6007037BE /* RecipesCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesCollectionViewModel.swift; sourceTree = "<group>"; };
+		400067DF2CE2FEE4007037BE /* NetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				400067A32CDEC618007037BE /* FetchRecipesTests.swift */,
+				400067DF2CE2FEE4007037BE /* NetworkTests.swift */,
 			);
 			path = FetchRecipesTests;
 			sourceTree = "<group>";
@@ -204,6 +213,7 @@
 		400067D32CDF1FEE007037BE /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				400067DD2CE1B4B6007037BE /* RecipesCollectionViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -212,6 +222,8 @@
 			isa = PBXGroup;
 			children = (
 				400067D72CDF2AE2007037BE /* CountryFlagView.swift */,
+				400067D92CE1A225007037BE /* RecipeCardView.swift */,
+				400067DB2CE1B4A7007037BE /* RecipesCollectionView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -346,16 +358,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				400067DA2CE1A225007037BE /* RecipeCardView.swift in Sources */,
 				400067D82CDF2AE2007037BE /* CountryFlagView.swift in Sources */,
 				400067CD2CDEE1A1007037BE /* RequestScheme.swift in Sources */,
 				400067C32CDEDC84007037BE /* Recipes.swift in Sources */,
 				400067BE2CDEDADF007037BE /* NetworkError.swift in Sources */,
+				400067DC2CE1B4A7007037BE /* RecipesCollectionView.swift in Sources */,
 				400067C92CDEDF6D007037BE /* BaseURL.swift in Sources */,
 				400067952CDEC616007037BE /* ContentView.swift in Sources */,
 				400067D12CDEE2B6007037BE /* RecipeRequestEndpoint.swift in Sources */,
 				400067CF2CDEE1F7007037BE /* RecipesApiPaths.swift in Sources */,
 				400067CB2CDEDF8D007037BE /* HTTPMethod.swift in Sources */,
 				400067C02CDEDC3A007037BE /* NetworkEngine.swift in Sources */,
+				400067DE2CE1B4B6007037BE /* RecipesCollectionViewModel.swift in Sources */,
 				400067C62CDEDF2A007037BE /* RequestEndpoint.swift in Sources */,
 				400067D52CDF25A1007037BE /* CountryFlags.swift in Sources */,
 				400067932CDEC616007037BE /* FetchRecipesApp.swift in Sources */,
@@ -366,6 +381,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				400067E02CE2FEE4007037BE /* NetworkTests.swift in Sources */,
 				400067A42CDEC618007037BE /* FetchRecipesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -530,6 +546,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -559,6 +576,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

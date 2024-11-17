@@ -9,15 +9,14 @@ import SwiftUI
 
 struct CountryFlagView: View {
     
-    @Binding var country: CountryFlags
+    var country: CountryFlags
     
     var body: some View {
         Text(country.asEmojiString())
     }
     
-    
 }
 
 #Preview {
-    CountryFlagView(country: .constant(CountryFlags.Malaysia))
+    CountryFlagView(country: (CountryFlags.Malaysian))
 }

@@ -29,7 +29,7 @@ class NetworkEngine {
             onComplete(.failure(NetworkError.invalidURLComponents))
             return
         }
-        // create utl request
+        // create url request
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = endpoint.method.rawValue
 
@@ -46,6 +46,7 @@ class NetworkEngine {
             
             // error handling for faulty response
             guard let response = response as? HTTPURLResponse, 200...299 ~= response.statusCode else {
+                print(response)
                 onComplete(.failure(NetworkError.badStatusCode))
                 return
             }
