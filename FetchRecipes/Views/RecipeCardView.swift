@@ -21,14 +21,12 @@ struct RecipeCardView: View {
                     CountryFlagView(country: CountryFlags(forCountry: recipe.cuisine))
                 }
                 HStack {
-                    Text("photoSmol: \(recipe.photo_url_small ?? "nil")")
-                    Spacer()
-                    Text("photoBig: \(recipe.photo_url_large ?? "nil")")
+                    smallPhotoView
                 }
                 HStack {
-                    Text("sourceurl: \(recipe.source_url ?? "nil")")
-                    Spacer()
                     Text("youtube: \(recipe.youtube_url ?? "nil")")
+                    Spacer()
+                    sourceLinkView
                 }
                 Text("uuid: \(recipe.uuid)")
             }
@@ -38,6 +36,34 @@ struct RecipeCardView: View {
     var nameView: some View {
         Text(recipe.name)
     }
+    
+    #warning("handle nil cases")
+    var smallPhotoView: some View {
+        AsyncImage(url: URL(string: recipe.photo_url_small ?? "nil")){ image in
+            image.resizable()
+        } placeholder: {
+            Color.red
+        }
+        .frame(width: 128, height: 128)
+        .clipShape(.rect(cornerRadius: 25))
+    }
+    
+    var sourceLinkView: some View {
+        Link(destination: URL(string: recipe.source_url ?? "nil")!) {
+            Image(systemName: SFSymbols.safari.rawValue)
+        }
+    }
+    
+//    as the large photo is the same as the small photo, and the small photos are big enough, we will not require this.
+//    var largePhotoView: some View {
+//        AsyncImage(url: URL(string: recipe.photo_url_large ?? "nil")){ image in
+//            image.resizable()
+//        } placeholder: {
+//            Color.red
+//        }
+//        .frame(width: 150, height: 150)
+//        .clipShape(.rect(cornerRadius: 25))
+//    }
 }
 
 #Preview {

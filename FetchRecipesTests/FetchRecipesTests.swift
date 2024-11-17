@@ -19,7 +19,7 @@ final class FetchRecipesTests: XCTestCase {
     }
 
     func testAllCuisinesAreAccountedFor() throws {
-
+        
     }
     
     func testNoCuisinesMapToMultipleOptions() throws {

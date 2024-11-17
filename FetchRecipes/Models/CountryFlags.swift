@@ -11,17 +11,12 @@ enum CountryFlags: String, CaseIterable {
     
     init(forCountry: String) {
         for flag in CountryFlags.allCases {
-            print("comparing \(flag.rawValue.prefix(3).lowercased()) with \(forCountry.prefix(3).lowercased())")
             if flag.rawValue.lowercased() == forCountry.lowercased() {
-                print("true")
                 self = flag
-                print("self = \(self)")
                 return
             }
         }
-        print("false")
         self = CountryFlags._undefined
-        print("self = \(self)")
     }
     
     case British
