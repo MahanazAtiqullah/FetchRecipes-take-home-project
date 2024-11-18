@@ -11,6 +11,7 @@ import Foundation
  This class handles the api call to pull JSON data and handles and returns appropriate errors
  */
 class NetworkEngine {
+    
     /// `Description:`Generic network request function for any JSON data type
     ///
     /// - `Parameters:`
@@ -19,10 +20,7 @@ class NetworkEngine {
     func request<T: Codable>(endpoint: RequestEndpoint, onComplete: @escaping (Result<T, NetworkError>) -> ()) {
         
         // set up components of url
-        var  urlComponents = URLComponents()
-        urlComponents.scheme = endpoint.scheme.rawValue
-        urlComponents.host = endpoint.baseURL.rawValue
-        urlComponents.path = endpoint.path
+        var  urlComponents = self.createURLComponents(endpoint: endpoint)
         
         // create url
         guard let url = urlComponents.url else {
@@ -30,8 +28,7 @@ class NetworkEngine {
             return
         }
         // create url request
-        var urlRequest = URLRequest(url: url)
-        urlRequest.httpMethod = endpoint.method.rawValue
+        var urlRequest = self.createURLRequest(endpoint: endpoint, url: url)
 
         // create session and start dataTask
         let session = URLSession(configuration: .default)
@@ -46,7 +43,6 @@ class NetworkEngine {
             
             // error handling for faulty response
             guard let response = response as? HTTPURLResponse, 200...299 ~= response.statusCode else {
-                print(response)
                 onComplete(.failure(NetworkError.badStatusCode))
                 return
             }
@@ -68,6 +64,23 @@ class NetworkEngine {
             
         }
         dataTask.resume()
+    }
+    
+    private func createURLComponents(endpoint: RequestEndpoint) -> URLComponents {
+        var  urlComponents = URLComponents()
+        
+        urlComponents.scheme = endpoint.scheme.rawValue
+        urlComponents.host = endpoint.baseURL.rawValue
+        urlComponents.path = endpoint.path
+        
+        return urlComponents
+    }
+    
+    private func createURLRequest(endpoint: RequestEndpoint, url: URL) -> URLRequest {
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = endpoint.method.rawValue
+        
+        return urlRequest
     }
     
 }
