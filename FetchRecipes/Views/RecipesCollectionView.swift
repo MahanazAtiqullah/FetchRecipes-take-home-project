@@ -21,20 +21,24 @@ struct RecipesCollectionView: View {
     }
     
     var body: some View {
-        if (viewModel.loading) {
-            loadingView
-        } else if (viewModel.recipes == nil) {
-            errorView
-        } else if (viewModel.recipes!.recipes.isEmpty) {
-            emptyResultView
-        } else {
-            ScrollView {
-                LazyVGrid(columns: layout) {
-                    ForEach(viewModel.recipes!.recipes) { recipe in
-                        RecipeCardView(recipe: recipe).padding(EdgeInsets(top: 0, leading: 10, bottom: 10, trailing: 10))
+        ZStack {
+            if (viewModel.loading) {
+                loadingView
+            } else if (viewModel.recipes == nil) {
+                errorView
+            } else if (viewModel.recipes!.recipes.isEmpty) {
+                emptyResultView
+            } else {
+                ScrollView {
+                    LazyVGrid(columns: layout) {
+                        ForEach(viewModel.recipes!.recipes) { recipe in
+                            RecipeCardView(recipe: recipe).padding(EdgeInsets(top: 0, leading: 10, bottom: 10, trailing: 10))
+                        }
                     }
                 }
             }
+        }.refreshable {
+            viewModel.getRecipes()
         }
     }
     
