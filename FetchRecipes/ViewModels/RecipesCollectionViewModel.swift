@@ -42,5 +42,20 @@ extension RecipesCollectionView {
             }
         }
         
+        func refresh() {
+            networkEngine.request(endpoint: RecipeRequestEndpoint.main) { (result: Result<Recipes, NetworkError>) in
+                switch result {
+                case .success(let response):
+                    DispatchQueue.main.async {
+                        self.recipes = response
+                    }
+                case .failure(let error):
+                    DispatchQueue.main.async {
+                        self.error = error
+                    }
+                }
+            }
+        }
+        
     }
 }

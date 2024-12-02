@@ -38,7 +38,7 @@ struct RecipesCollectionView: View {
                 }
             }
         }.refreshable {
-            viewModel.getRecipes()
+            viewModel.refresh()
         }
     }
     
