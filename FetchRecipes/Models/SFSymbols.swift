@@ -10,4 +10,6 @@ import Foundation
 enum SFSymbols: String {
     case sourceLink = "safari"
     case imagePlaceholder = "camera.viewfinder"
+    case videoError = "play.slash"
+    case youtube = "play.rectangle.fill"
 }

@@ -10,8 +10,14 @@ import Foundation
 extension RecipeCardView {
     @MainActor class RecipeCardViewModel: ObservableObject {
         
-        func createImageURL(forString: String?) -> URL? {
-            guard let unwrappedString = forString else { return nil }
+        @Published var recipe: Recipe
+        
+        init(recipe: Recipe) {
+            self.recipe = recipe
+        }
+        
+        func createUrl(fromString: String?) -> URL? {
+            guard let unwrappedString = fromString else { return nil }
             return URL(string: unwrappedString)
         }
         

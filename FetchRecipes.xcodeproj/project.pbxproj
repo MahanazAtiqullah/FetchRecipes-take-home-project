@@ -32,6 +32,9 @@
 		400067E22CEAA665007037BE /* RecipeCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400067E12CEAA665007037BE /* RecipeCardViewModel.swift */; };
 		400067E62CEAA6AE007037BE /* ParsingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400067E42CEAA6AE007037BE /* ParsingTests.swift */; };
 		400067E82CEAA9E8007037BE /* SFSymbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400067E72CEAA9E8007037BE /* SFSymbols.swift */; };
+		400067ED2CEC0F1D007037BE /* YouTubePlayerKit in Frameworks */ = {isa = PBXBuildFile; productRef = 400067EC2CEC0F1D007037BE /* YouTubePlayerKit */; };
+		400067EF2CEC0F8D007037BE /* YouTubePlayerViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400067EE2CEC0F8D007037BE /* YouTubePlayerViewWrapper.swift */; };
+		400067F12CECEC91007037BE /* Typography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400067F02CECEC91007037BE /* Typography.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +83,8 @@
 		400067E12CEAA665007037BE /* RecipeCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCardViewModel.swift; sourceTree = "<group>"; };
 		400067E42CEAA6AE007037BE /* ParsingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParsingTests.swift; sourceTree = "<group>"; };
 		400067E72CEAA9E8007037BE /* SFSymbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbols.swift; sourceTree = "<group>"; };
+		400067EE2CEC0F8D007037BE /* YouTubePlayerViewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouTubePlayerViewWrapper.swift; sourceTree = "<group>"; };
+		400067F02CECEC91007037BE /* Typography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typography.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				400067ED2CEC0F1D007037BE /* YouTubePlayerKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,6 +220,7 @@
 			children = (
 				400067D42CDF25A1007037BE /* CountryFlags.swift */,
 				400067E72CEAA9E8007037BE /* SFSymbols.swift */,
+				400067F02CECEC91007037BE /* Typography.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -233,6 +240,7 @@
 				400067D72CDF2AE2007037BE /* CountryFlagView.swift */,
 				400067D92CE1A225007037BE /* RecipeCardView.swift */,
 				400067DB2CE1B4A7007037BE /* RecipesCollectionView.swift */,
+				400067EE2CEC0F8D007037BE /* YouTubePlayerViewWrapper.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -253,6 +261,9 @@
 			dependencies = (
 			);
 			name = FetchRecipes;
+			packageProductDependencies = (
+				400067EC2CEC0F1D007037BE /* YouTubePlayerKit */,
+			);
 			productName = FetchRecipes;
 			productReference = 4000678F2CDEC616007037BE /* FetchRecipes.app */;
 			productType = "com.apple.product-type.application";
@@ -325,6 +336,9 @@
 				Base,
 			);
 			mainGroup = 400067862CDEC616007037BE;
+			packageReferences = (
+				400067EB2CEC0F1C007037BE /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */,
+			);
 			productRefGroup = 400067902CDEC616007037BE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -377,6 +391,7 @@
 				400067DC2CE1B4A7007037BE /* RecipesCollectionView.swift in Sources */,
 				400067C92CDEDF6D007037BE /* BaseURL.swift in Sources */,
 				400067952CDEC616007037BE /* ContentView.swift in Sources */,
+				400067F12CECEC91007037BE /* Typography.swift in Sources */,
 				400067D12CDEE2B6007037BE /* RecipeRequestEndpoint.swift in Sources */,
 				400067CF2CDEE1F7007037BE /* RecipesApiPaths.swift in Sources */,
 				400067CB2CDEDF8D007037BE /* HTTPMethod.swift in Sources */,
@@ -385,6 +400,7 @@
 				400067C62CDEDF2A007037BE /* RequestEndpoint.swift in Sources */,
 				400067D52CDF25A1007037BE /* CountryFlags.swift in Sources */,
 				400067932CDEC616007037BE /* FetchRecipesApp.swift in Sources */,
+				400067EF2CEC0F8D007037BE /* YouTubePlayerViewWrapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -718,6 +734,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		400067EB2CEC0F1C007037BE /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SvenTiigi/YouTubePlayerKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.9.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		400067EC2CEC0F1D007037BE /* YouTubePlayerKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 400067EB2CEC0F1C007037BE /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */;
+			productName = YouTubePlayerKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 400067872CDEC616007037BE /* Project object */;
 }

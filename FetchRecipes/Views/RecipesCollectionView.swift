@@ -11,6 +11,11 @@ struct RecipesCollectionView: View {
     
     @ObservedObject var viewModel: RecipesCollectionViewModel
     
+    let layout = [
+        GridItem(.flexible()),
+        GridItem(.flexible())
+    ]
+    
     init() {
         self.viewModel = RecipesCollectionViewModel()
     }
@@ -24,13 +29,12 @@ struct RecipesCollectionView: View {
             emptyResultView
         } else {
             ScrollView {
-                VStack {
+                LazyVGrid(columns: layout) {
                     ForEach(viewModel.recipes!.recipes) { recipe in
-                        RecipeCardView(recipe: recipe)
+                        RecipeCardView(recipe: recipe).padding(EdgeInsets(top: 0, leading: 10, bottom: 10, trailing: 10))
                     }
-                }.padding(10)
+                }
             }
-//            .accessibilityIdentifier(ElementIdentifiers.__.rawValue)
         }
     }
     

@@ -11,8 +11,16 @@ struct CountryFlagView: View {
     
     var country: CountryFlags
     
+    init(country: CountryFlags) {
+        self.country = country
+    }
+    
+    init(country: String) {
+        self.country = CountryFlags(forCountry: country)
+    }
+    
     var body: some View {
-        Text(country.asEmojiString())
+        Text(country.asEmojiString()).font(.system(size: 30))
     }
     
 }
